@@ -1,0 +1,819 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>vimrc Plug 공유 - 겸손하자</title>
+<meta name="description" content="vim plug 공유">
+
+
+  <meta name="author" content="한지웅">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="겸손하자">
+<meta property="og:title" content="vimrc Plug 공유">
+<meta property="og:url" content="http://localhost:4000/vimrc/">
+
+
+  <meta property="og:description" content="vim plug 공유">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-06T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2020-07-06T08:55:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/vimrc/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Han Jiung",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="겸손하자 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Han Jiung BLOG
+          <span class="site-subtitle">< jiung /1.0 ></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Caregories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/hanjiung">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">Annual Post</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">vimrc Plug 공유</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/hanjiwoong.jpg" alt="한지웅" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">한지웅</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>흥미로운 것들을 찾아서 공부하고 있는 개발자입니다.<br />문의사항은 이메일로 연락바랍니다.<br /><br />* AI innovation - 11기 <br />* Blockchain LV99 - 1기</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:smert2580@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/codethinking1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/hanjiung?tab=repositories" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:smert2580@naver.com">
+            <meta itemprop="email" content="smert2580@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="vimrc Plug 공유">
+    <meta itemprop="description" content="vim plug 공유">
+    <meta itemprop="datePublished" content="2020-07-06T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2020-07-06T08:55:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">vimrc Plug 공유
+</h1>
+          
+<!--
+<p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p> -->
+<p class="page__date"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트: <time datetime="2020-07-06T00:00:00+09:00">July 06, 2020</time></p>
+          
+        </header>
+
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#plug-manager-설치">Plug-Manager 설치</a></li>
+  <li><a href="#주의">주의</a></li>
+  <li><a href="#vimrc-코드">.vimrc 코드</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="plug-manager-설치">Plug-Manager 설치</h2>
+
+<p>가이드에 따라서 설치해줘야 한다.</p>
+
+<p><a href="https://github.com/junegunn/vim-plug">vim-plug 설치</a></p>
+
+<h2 id="주의">주의</h2>
+
+<p>명령어 vim ~/.vimrc</p>
+<ul>
+  <li>주피터는 Plug 실패했다. 추후 수정해서 올리겠습니다.</li>
+</ul>
+
+<h2 id="vimrc-코드">.vimrc 코드</h2>
+
+<div class="language-viml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">"- For Neovim: stdpath('data') . '/plugged'</span>
+<span class="c">" - Avoid using standard Vim directory names like 'plugin'</span>
+<span class="k">call</span> plug#begin<span class="p">(</span><span class="s1">'~/.vim/plugged'</span><span class="p">)</span>
+<span class="c">" Make sure you use single quotes</span>
+<span class="k">set</span> <span class="nb">hlsearch</span>
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span><span class="nb">indent</span><span class="p">,</span><span class="nb">eol</span><span class="p">,</span>start
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span><span class="m">2</span>  "<span class="nb">compatible</span> with <span class="k">version</span> <span class="m">5</span><span class="p">.</span><span class="m">4</span> <span class="nb">and</span> <span class="k">earlier</span>
+<span class="c">" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align</span>
+Plug <span class="s1">'junegunn/vim-easy-align'</span>
+Plug <span class="s1">'vim-scripts/indentpython.vim'</span>
+Plug <span class="s1">'nvie/vim-flake8'</span>
+Plug <span class="s1">'jnurmine/Zenburn'</span>
+<span class="c">" Any valid git URL is allowed</span>
+Plug <span class="s1">'https://github.com/junegunn/vim-github-dashboard.git'</span>
+Plug <span class="s1">'https://github.com/raphamorim/lucario.git'</span>
+<span class="c">" airline</span>
+Plug <span class="s1">'https://github.com/vim-airline/vim-airline.git'</span>
+Plug <span class="s1">'vim-airline/vim-airline-themes'</span>
+Plug <span class="s1">'https://github.com/airblade/vim-gitgutter.git'</span>
+
+<span class="c">"jupyter</span>
+<span class="c">"Plug 'jupyter-vim/jupyter-vim'</span>
+<span class="c">"Plug 'jupyter-vim/jupyter-vim'</span>
+<span class="c">"Plug 'jpalardy/vim-slime', { 'for': 'python' }</span>
+<span class="c">"Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }</span>
+Plug <span class="s1">'https://github.com/ivanov/vim-ipython.git'</span>
+
+<span class="c">"print(hex(.))</span>
+<span class="c">"Python syntax</span>
+<span class="c">"Plug 'https://github.com/vim-python/python-syntax.git'</span>
+
+<span class="c">"multiple cursor</span>
+Plug <span class="s1">'terryma/vim-multiple-cursors'</span>
+
+<span class="c">"vimshell</span>
+Plug <span class="s1">'Shougo/vimproc.vim'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'do'</span> <span class="p">:</span> <span class="s1">'make'</span><span class="p">}</span>
+Plug <span class="s1">'https://github.com/Shougo/vimshell.vim.git'</span>
+
+<span class="c">"fugitive</span>
+Plug <span class="s1">'https://github.com/tpope/vim-fugitive.git'</span>
+
+<span class="c">"tagbar</span>
+Plug <span class="s1">'https://github.com/majutsushi/tagbar.git'</span>
+
+<span class="c">"YouComplteMe</span>
+Plug <span class="s1">'https://github.com/ycm-core/YouCompleteMe.git'</span>
+
+<span class="c">"find  control + p</span>
+Plug <span class="s1">'ctrlpvim/ctrlp.vim'</span>
+
+<span class="c">"tagbar</span>
+Plug <span class="s1">'majutsushi/tagbar'</span>
+
+<span class="c">" Multiple Plug commands can be written in a single line using |   separators</span>
+Plug <span class="s1">'SirVer/ultisnips'</span> <span class="p">|</span> Plug <span class="s1">'honza/vim-snippets'</span>
+
+<span class="c">"syntatic 검사</span>
+Plug <span class="s1">'scrooloose/syntastic'</span>
+
+<span class="c">"systax hilighting</span>
+Plug <span class="s1">'kchmck/vim-coffee-script'</span>
+
+<span class="c">" On-demand loading</span>
+Plug <span class="s1">'scrooloose/nerdtree'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'on'</span><span class="p">:</span>  <span class="s1">'NERDTreeToggle'</span> <span class="p">}</span>
+Plug <span class="s1">'tpope/vim-fireplace'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'for'</span><span class="p">:</span> <span class="s1">'clojure'</span> <span class="p">}</span>
+Plug <span class="s1">'preservim/nerdcommenter'</span>
+
+<span class="c">"gitgutter</span>
+Plug <span class="s1">'https://github.com/airblade/vim-gitgutter.git'</span>
+
+
+<span class="c">" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)</span>
+Plug <span class="s1">'fatih/vim-go'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'tag'</span><span class="p">:</span> <span class="s1">'*'</span> <span class="p">}</span>
+<span class="c">" Plugin options</span>
+Plug <span class="s1">'nsf/gocode'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'tag'</span><span class="p">:</span> <span class="s1">'v.20150303'</span><span class="p">,</span> <span class="s1">'rtp'</span><span class="p">:</span> <span class="s1">'vim'</span> <span class="p">}</span>
+
+<span class="c">" Plugin outside ~/.vim/plugged with post-update hook</span>
+Plug <span class="s1">'junegunn/fzf'</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'dir'</span><span class="p">:</span> <span class="s1">'~/.fzf'</span><span class="p">,</span> <span class="s1">'do'</span><span class="p">:</span> <span class="s1">'./install --all'</span> <span class="p">}</span>
+
+<span class="c">" Unmanaged plugin (manually installed and updated)</span>
+Plug <span class="s1">'~/my-prototype-plugin'</span>
+
+<span class="c">" Initialize plugin system</span>
+<span class="k">call</span> plug#end<span class="p">()</span>
+
+<span class="k">set</span> <span class="nb">hlsearch</span> "<span class="k">set</span> <span class="nb">search</span> hilighting
+<span class="k">set</span> <span class="nb">fileencodings</span><span class="p">=</span>utf<span class="m">-8</span> " <span class="k">set</span> <span class="k">file</span> <span class="nb">encoding</span>
+<span class="k">set</span> <span class="k">display</span><span class="p">+=</span>lastline " Always <span class="k">try</span> <span class="k">to</span> show <span class="k">a</span> paragraph
+<span class="k">set</span> <span class="nb">title</span> " <span class="k">set</span> the <span class="nb">window</span>'s <span class="nb">title</span>
+<span class="c">"set termguicolors</span>
+
+<span class="c">"Python</span>
+<span class="c">"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree</span>
+<span class="c">""colorscheme solarized</span>
+<span class="k">colorscheme</span> lucario
+<span class="k">set</span> <span class="k">number</span>
+<span class="k">let</span> <span class="nv">g:go_version_warning</span> <span class="p">=</span> <span class="m">0</span>
+
+<span class="c">"let g:ycm_server_python_interpreter = '/usr/bin/python3'</span>
+<span class="k">let</span> <span class="nv">g:ycm_global_ycm_extra_conf</span> <span class="p">=</span> <span class="s1">'~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'</span>
+autocmd <span class="k">filetype</span> <span class="nb">cpp</span> nnoremap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">w</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">w</span> <span class="p">&lt;</span>bar<span class="p">&gt;</span> exec <span class="s1">'!g++ '</span><span class="p">.</span><span class="nb">shellescape</span><span class="p">(</span><span class="s1">'%'</span><span class="p">).</span><span class="s1">' -o '</span><span class="p">.</span><span class="nb">shellescape</span><span class="p">(</span><span class="s1">'%:r'</span><span class="p">).</span><span class="s1">' &amp;&amp; ./'</span><span class="p">.</span><span class="nb">shellescape</span><span class="p">(</span><span class="s1">'%:r'</span><span class="p">)&lt;</span>CR<span class="p">&gt;</span>
+
+<span class="c">"Python syntax</span>
+<span class="c">"let g:python_highlight_all = 1</span>
+
+<span class="k">let</span> <span class="nv">g:ycm_confirm_extra_conf</span> <span class="p">=</span> <span class="m">0</span>
+<span class="c">"To avoid conflict snippets</span>
+<span class="k">let</span> <span class="nv">g:ycm_key_list_select_completion</span> <span class="p">=</span> <span class="p">[</span><span class="s1">'&lt;C-j&gt;'</span><span class="p">,</span> <span class="s1">'&lt;Down&gt;'</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">g:ycm_key_list_previous_completion</span> <span class="p">=</span> <span class="p">[</span><span class="s1">'&lt;C-k&gt;'</span><span class="p">,</span> <span class="s1">'&lt;Up&gt;'</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">g:ycm_autoclose_preview_window_after_completion</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:ycm_server_python_interpreter</span> <span class="p">=</span> <span class="s1">'/usr/local/bin/python3'</span>
+
+<span class="k">let</span> <span class="nv">g:NERDTreeDirArrowExpandable</span> <span class="p">=</span> <span class="s1">'▸'</span>
+<span class="k">let</span> <span class="nv">g:NERDTreeDirArrowCollapsible</span> <span class="p">=</span> <span class="s1">'▾'</span>
+
+<span class="c">"" 숨김파일 보이도록 처리</span>
+<span class="k">let</span> NERDTreeShowHidden<span class="p">=</span><span class="m">1</span>
+
+nmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">a</span><span class="p">&gt;</span> <span class="p">:</span>NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<span class="c">"autocmd filetype cpp nnoremap &lt;C-w&gt; :w &lt;bar&gt; exec '!g++ '.shellescape('%').'-o '.shellescape('%:r').' &amp;&amp; ./'.shellescape('%:r')&lt;CR&gt;</span>
+nmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">e</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">w</span><span class="p">&lt;</span>Enter<span class="p">&gt;:</span> <span class="p">!</span><span class="k">python3</span> %<span class="p">&lt;</span>Enter<span class="p">&gt;</span>
+
+<span class="c">" &lt;F1&gt; 폴딩</span>
+<span class="nb">map</span> <span class="p">&lt;</span>F1<span class="p">&gt;</span> <span class="k">v</span><span class="p">]}</span>zf
+<span class="c">" &lt;F2&gt; 창이동</span>
+<span class="nb">map</span> <span class="p">&lt;</span>C<span class="p">-</span>z<span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span><span class="k">w</span><span class="p">&gt;&lt;</span>C<span class="p">-</span><span class="k">w</span><span class="p">&gt;</span>
+
+<span class="c">"::&gt; &lt;C-w&gt;&lt;C-w&gt;</span>
+<span class="nb">map</span> <span class="p">&lt;</span>F9<span class="p">&gt;</span> <span class="p">:</span><span class="k">bp</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+<span class="nb">map</span> <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">:</span><span class="k">bn</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+
+nmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">d</span><span class="p">&gt;</span> <span class="p">:</span>TagbarToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<span class="c">" &lt;F7&gt; shell</span>
+<span class="nb">map</span> <span class="p">&lt;</span>F7<span class="p">&gt;</span> <span class="p">:</span>VimShell<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+<span class="c">"vim-multiple-cursor</span>
+<span class="c">" vim-multiple-cursor</span>
+<span class="k">let</span> <span class="nv">g:multi_cursor_use_default_mapping</span><span class="p">=</span><span class="m">0</span>
+<span class="c">" Default mapping</span>
+<span class="k">let</span> <span class="nv">g:multi_cursor_next_key</span><span class="p">=</span><span class="s1">'&lt;C-n&gt;'</span>
+<span class="k">let</span> <span class="nv">g:multi_cursor_prev_key</span><span class="p">=</span><span class="s1">'&lt;C-p&gt;'</span>
+<span class="k">let</span> <span class="nv">g:multi_cursor_skip_key</span><span class="p">=</span><span class="s1">'&lt;C-x&gt;'</span>
+<span class="k">let</span> <span class="nv">g:multi_cursor_quit_key</span><span class="p">=</span><span class="s1">'&lt;Esc&gt;'</span>
+<span class="c">"colorschem airline</span>
+<span class="k">let</span> <span class="nv">g:airline_theme</span><span class="p">=</span><span class="s1">'raven'</span>
+
+<span class="c">"find speed up</span>
+<span class="k">let</span> <span class="nv">g:ctrlp_custom_ignore</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">   \</span> <span class="s1">'dir'</span><span class="p">:</span>  <span class="s1">'\.git$\|public$\|log$\|tmp$\|vendor$'</span><span class="p">,</span>
+<span class="se">     \</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s1">'\v\.(exe|so|dll)$'</span>
+<span class="se">       \</span> <span class="p">}</span>
+<span class="c">" indent line</span>
+<span class="k">let</span> <span class="nv">g:indentLine_char_list</span> <span class="p">=</span> <span class="p">[</span><span class="s1">'|'</span><span class="p">,</span> <span class="s1">'¦'</span><span class="p">,</span> <span class="s1">'┆'</span><span class="p">,</span> <span class="s1">'┊'</span><span class="p">]</span>
+
+<span class="c">" Highlight all instances of word under cursor, when idle.</span>
+<span class="c">" Useful when studying strange source code.</span>
+<span class="c">" Type z/ to toggle highlighting on/off.</span>
+nnoremap z/ <span class="p">:</span><span class="k">if</span> AutoHighlightToggle<span class="p">()&lt;</span>Bar<span class="p">&gt;</span><span class="k">set</span> <span class="nb">hls</span><span class="p">&lt;</span>Bar<span class="p">&gt;</span><span class="k">endif</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<span class="k">function</span><span class="p">!</span> AutoHighlightToggle<span class="p">()</span>
+   <span class="k">let</span> @/ <span class="p">=</span> <span class="s1">''</span>
+   <span class="k">if</span> <span class="nb">exists</span><span class="p">(</span><span class="s1">'#auto_highlight'</span><span class="p">)</span>
+     <span class="k">au</span><span class="p">!</span> auto_highlight
+     augroup<span class="p">!</span> auto_highlight
+     <span class="k">setl</span> <span class="nb">updatetime</span><span class="p">=</span><span class="m">4000</span>
+     echo <span class="s1">'Highlight current word: off'</span>
+     <span class="k">return</span> <span class="m">0</span>
+  <span class="k">else</span>
+    augroup auto_highlight
+    <span class="k">au</span><span class="p">!</span>
+    <span class="k">au</span> <span class="nb">CursorHold</span> * <span class="k">let</span> @/ <span class="p">=</span> <span class="s1">'\V\&lt;'</span><span class="p">.</span><span class="nb">escape</span><span class="p">(</span><span class="nb">expand</span><span class="p">(</span><span class="s1">'&lt;cword&gt;'</span><span class="p">),</span> <span class="s1">'\').'</span>\<span class="p">&gt;</span>'
+    augroup end
+    <span class="k">setl</span> <span class="nb">updatetime</span><span class="p">=</span><span class="m">500</span>
+    echo <span class="s1">'Highlight current word: ON'</span>
+  <span class="k">return</span> <span class="m">1</span>
+ <span class="k">endif</span>
+<span class="k">endfunction</span>
+
+
+
+</code></pre></div></div>
+
+<p>감사합니다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#plug" class="page__taxonomy-item" rel="tag">plug</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#vim" class="page__taxonomy-item" rel="tag">vim</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-07-05">July 5, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=vimrc+Plug+%EA%B3%B5%EC%9C%A0%20http%3A%2F%2Flocalhost%3A4000%2Fvimrc%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fvimrc%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fvimrc%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/boj/boj3034/" class="pagination--pager" title="BOJ3034 앵그리 창영 - PYTHON
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/boj/boj3034/" rel="permalink">BOJ3034 앵그리 창영 - PYTHON
+</a>
+      
+    </h2>
+<!--    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+       -->
+     
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 06 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">BOJ 브론즈
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/boj/boj5217/" rel="permalink">BOJ5217 쌍의 합 - PYTHON
+</a>
+      
+    </h2>
+<!--    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+       -->
+     
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 05 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">BOJ 브론즈
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/boj/boj5073/" rel="permalink">BOJ5073 삼각형과 세 변 - PYTHON
+</a>
+      
+    </h2>
+<!--    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+       -->
+     
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 04 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">BOJ 브론즈
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/boj/boj3029/" rel="permalink">BOJ3029 경고 - PYTHON
+</a>
+      
+    </h2>
+<!--    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+       -->
+     
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 03 2020</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">BOJ 브론즈
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/codethinking1" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/hanjiung?tab=repositories" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Han Jiung. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

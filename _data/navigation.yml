@@ -1,0 +1,13 @@
+# main links
+main:
+  - title: "Caregories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+    #- title: "Sample Posts"
+    #url: /year-archive/
+  - title: "About"
+    url: "https://github.com/hanjiung"
+  
+  - title: "Annual Post"
+    url: /posts/
